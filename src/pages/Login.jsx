@@ -40,20 +40,21 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-900 flex items-center justify-center p-8 text-white font-sans select-none relative overflow-hidden">
+        <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 md:p-8 text-white font-sans select-none relative overflow-hidden">
 
             {/* Background Decor */}
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
             {/* Language Toggle */}
-            <div className="absolute top-8 right-8 z-20">
+            <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20">
                 <button
                     onClick={toggleLanguage}
-                    className="flex items-center gap-3 bg-slate-800/80 hover:bg-slate-700 active:bg-slate-600 px-6 py-4 rounded-2xl text-xl font-bold transition-colors border border-slate-700 backdrop-blur"
+                    className="flex items-center gap-2 md:gap-3 bg-slate-800/80 hover:bg-slate-700 active:bg-slate-600 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl text-lg md:text-xl font-bold transition-colors border border-slate-700 backdrop-blur"
                 >
-                    <Globe className="w-6 h-6 text-emerald-500" />
-                    {t(`language_${i18n.language}`)}
+                    <Globe className="w-5 h-5 md:w-6 md:h-6 text-emerald-500" />
+                    <span className="hidden xs:inline">{t(`language_${i18n.language}`)}</span>
+                    <span className="xs:hidden font-mono uppercase">{i18n.language}</span>
                 </button>
             </div>
 
@@ -76,11 +77,11 @@ export default function Login() {
                 </div>
 
                 {/* Right Side: PIN Pad */}
-                <div className="w-full max-w-md bg-slate-800 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl relative">
+                <div className="w-full max-w-md bg-slate-800 p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] border border-slate-700 shadow-2xl relative">
 
-                    <div className="text-center mb-10">
-                        <h2 className="text-3xl font-bold text-white mb-3">{t('login_title')}</h2>
-                        <p className="text-slate-400 text-lg">{t('login_subtitle')}</p>
+                    <div className="text-center mb-6 md:mb-10">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">{t('login_title')}</h2>
+                        <p className="text-slate-400 text-base md:text-lg">{t('login_subtitle')}</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
@@ -90,10 +91,10 @@ export default function Login() {
                                 type="password"
                                 value={pin}
                                 readOnly
-                                className={`w-full bg-slate-900 border-2 ${error ? 'border-red-500' : 'border-slate-700 focus:border-emerald-500'} rounded-2xl py-6 text-center text-5xl font-mono tracking-[1em] text-white shadow-inner outline-none transition-colors h-24`}
+                                className={`w-full bg-slate-900 border-2 ${error ? 'border-red-500' : 'border-slate-700 focus:border-emerald-500'} rounded-xl md:rounded-2xl py-4 md:py-6 text-center text-4xl md:text-5xl font-mono tracking-[0.8em] md:tracking-[1em] text-white shadow-inner outline-none transition-colors h-20 md:h-24`}
                                 placeholder="****"
                             />
-                            <Lock className={`absolute right-6 top-1/2 -translate-y-1/2 w-8 h-8 ${error ? 'text-red-500' : (pin.length > 0 ? 'text-emerald-500' : 'text-slate-500')} transition-colors`} />
+                            <Lock className={`absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 ${error ? 'text-red-500' : (pin.length > 0 ? 'text-emerald-500' : 'text-slate-500')} transition-colors`} />
                         </div>
 
                         {error && (
@@ -107,7 +108,7 @@ export default function Login() {
                                     key={num}
                                     type="button"
                                     onClick={() => handleKeyPress(num)}
-                                    className="h-20 bg-slate-700 hover:bg-slate-600 active:bg-emerald-600 active:text-white rounded-2xl text-3xl font-medium transition-colors border border-slate-600 hover:border-slate-500"
+                                    className="h-16 md:h-20 bg-slate-700 hover:bg-slate-600 active:bg-emerald-600 active:text-white rounded-xl md:rounded-2xl text-2xl md:text-3xl font-medium transition-colors border border-slate-600 hover:border-slate-500"
                                 >
                                     {num}
                                 </button>
@@ -115,21 +116,21 @@ export default function Login() {
                             <button
                                 type="button"
                                 onClick={() => setPin('')}
-                                className="h-20 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-red-400 rounded-2xl text-xl font-bold transition-colors border border-slate-700"
+                                className="h-16 md:h-20 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-red-400 rounded-xl md:rounded-2xl text-lg md:text-xl font-bold transition-colors border border-slate-700"
                             >
                                 C
                             </button>
                             <button
                                 type="button"
                                 onClick={() => handleKeyPress(0)}
-                                className="h-20 bg-slate-700 hover:bg-slate-600 active:bg-emerald-600 active:text-white rounded-2xl text-3xl font-medium transition-colors border border-slate-600 hover:border-slate-500"
+                                className="h-16 md:h-20 bg-slate-700 hover:bg-slate-600 active:bg-emerald-600 active:text-white rounded-xl md:rounded-2xl text-2xl md:text-3xl font-medium transition-colors border border-slate-600 hover:border-slate-500"
                             >
                                 0
                             </button>
                             <button
                                 type="button"
                                 onClick={handleDelete}
-                                className="h-20 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-slate-300 rounded-2xl text-xl font-bold transition-colors border border-slate-700"
+                                className="h-16 md:h-20 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 text-slate-300 rounded-xl md:rounded-2xl text-lg md:text-xl font-bold transition-colors border border-slate-700"
                             >
                                 DEL
                             </button>
@@ -138,7 +139,7 @@ export default function Login() {
                         <button
                             type="submit"
                             disabled={pin.length === 0}
-                            className="w-full mt-4 h-20 bg-emerald-600 disabled:bg-slate-700 disabled:text-slate-500 hover:bg-emerald-500 active:bg-emerald-700 text-white text-2xl font-bold rounded-2xl transition-all shadow-lg disabled:shadow-none"
+                            className="w-full mt-2 md:mt-4 h-16 md:h-20 bg-emerald-600 disabled:bg-slate-700 disabled:text-slate-500 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xl md:text-2xl font-bold rounded-xl md:rounded-2xl transition-all shadow-lg disabled:shadow-none"
                         >
                             {t('login_btn')}
                         </button>

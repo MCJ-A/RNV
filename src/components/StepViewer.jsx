@@ -129,32 +129,33 @@ export default function StepViewer() {
             )}
 
             {/* Header */}
-            <header className="bg-slate-800 border-b border-slate-700 p-6 flex justify-between items-center shrink-0">
-                <div>
-                    <h2 className="text-slate-400 text-2xl font-medium mb-2 uppercase tracking-wide">
+            <header className="bg-slate-800 border-b border-slate-700 p-4 md:p-6 flex flex-col sm:flex-row justify-between sm:items-center shrink-0 gap-4">
+                <div className="text-center sm:text-left">
+                    <h2 className="text-slate-400 text-lg md:text-2xl font-medium mb-1 md:mb-2 uppercase tracking-wide">
                         {t('step_x_of_y', { current: currentStepIndex + 1, total: steps.length })}
                     </h2>
-                    <h1 className="text-4xl font-bold">{stTitle}</h1>
+                    <h1 className="text-2xl md:text-4xl font-bold leading-tight">{stTitle}</h1>
                 </div>
-                <div className="text-right flex items-center gap-8">
+                <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 md:gap-8">
                     <button
                         onClick={toggleLanguage}
-                        className="bg-slate-700/50 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 px-6 py-4 rounded-xl flex items-center gap-3 text-xl font-bold transition-colors"
+                        className="bg-slate-700/50 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 px-4 md:px-6 py-2 md:py-4 rounded-xl flex items-center gap-2 md:gap-3 text-lg md:text-xl font-bold transition-colors"
                     >
-                        <Globe className="w-8 h-8 text-emerald-500" />
-                        {t(`language_${i18n.language}`)}
+                        <Globe className="w-6 h-6 md:w-8 md:h-8 text-emerald-500" />
+                        <span className="hidden sm:inline">{t(`language_${i18n.language}`)}</span>
+                        <span className="sm:hidden font-mono uppercase">{i18n.language}</span>
                     </button>
 
-                    <div>
-                        <h3 className="text-slate-400 text-xl font-medium mb-2 uppercase tracking-wide">{t('product_label')}</h3>
-                        <p className="text-3xl font-bold text-emerald-400">{prTitle}</p>
+                    <div className="text-center sm:text-right">
+                        <h3 className="text-slate-400 text-xs md:text-xl font-medium mb-1 uppercase tracking-wide">{t('product_label')}</h3>
+                        <p className="text-xl md:text-3xl font-bold text-emerald-400">{prTitle}</p>
                     </div>
                     <button
                         onClick={() => setShowCancelModal(true)}
-                        className="bg-red-500/10 hover:bg-red-500/20 active:bg-red-500/30 text-red-500 border border-red-500/30 px-6 py-4 rounded-xl flex items-center gap-3 text-xl font-bold transition-colors"
+                        className="bg-red-500/10 hover:bg-red-500/20 active:bg-red-500/30 text-red-500 border border-red-500/30 px-4 md:px-6 py-2 md:py-4 rounded-xl flex items-center gap-2 md:gap-3 text-lg md:text-xl font-bold transition-colors"
                     >
-                        <XCircle className="w-8 h-8" />
-                        {t('cancel_btn')}
+                        <XCircle className="w-6 h-6 md:w-8 md:h-8" />
+                        <span className="hidden xs:inline">{t('cancel_btn')}</span>
                     </button>
                 </div>
             </header>
@@ -168,44 +169,44 @@ export default function StepViewer() {
             </div>
 
             {/* Main Content Area */}
-            <main className="flex-1 flex p-8 gap-8 overflow-hidden h-full">
+            <main className="flex-1 flex flex-col lg:flex-row p-4 md:p-8 gap-6 md:gap-8 overflow-y-auto lg:overflow-hidden h-full">
                 {/* Left Side: Instructions */}
-                <div className="flex-[1.2] flex flex-col bg-slate-800 rounded-2xl border border-slate-700 p-10 shadow-xl relative overflow-y-auto">
-                    <div className="flex items-center gap-5 mb-8 bg-amber-500/10 p-6 rounded-2xl border border-amber-500/30">
-                        <AlertTriangle className="w-12 h-12 text-amber-500 shrink-0" />
-                        <span className="text-amber-500 text-2xl font-bold uppercase tracking-wider">{t('mandatory_instruction')}</span>
+                <div className="flex-[1.2] flex flex-col bg-slate-800 rounded-2xl border border-slate-700 p-6 md:p-10 shadow-xl relative min-h-[300px]">
+                    <div className="flex items-center gap-3 md:gap-5 mb-6 md:mb-8 bg-amber-500/10 p-4 md:p-6 rounded-xl md:rounded-2xl border border-amber-500/30">
+                        <AlertTriangle className="w-8 h-8 md:w-12 md:h-12 text-amber-500 shrink-0" />
+                        <span className="text-amber-500 text-xl md:text-2xl font-bold uppercase tracking-wider">{t('mandatory_instruction')}</span>
                     </div>
 
-                    <p className="text-4xl leading-snug text-slate-100 font-medium whitespace-pre-line">
+                    <p className="text-2xl md:text-4xl leading-snug text-slate-100 font-medium whitespace-pre-line">
                         {stInstruction}
                     </p>
                 </div>
 
                 {/* Right Side: Image/Reference & Telemetry */}
-                <div className="flex-1 flex flex-col gap-6">
+                <div className="flex-1 flex flex-col gap-6 min-h-[400px]">
                     {/* Live Telemetry HUD */}
-                    <div className="bg-slate-800 rounded-2xl border border-slate-700 p-6 shadow-lg flex justify-between items-center bg-gradient-to-r from-slate-800 to-slate-900 border-l-4 border-l-cyan-500 shrink-0">
-                        <div className="flex items-center gap-4">
-                            <Activity className="w-10 h-10 text-cyan-400" />
+                    <div className="bg-slate-800 rounded-2xl border border-slate-700 p-4 md:p-6 shadow-lg flex justify-between items-center bg-gradient-to-r from-slate-800 to-slate-900 border-l-4 border-l-cyan-500 shrink-0">
+                        <div className="flex items-center gap-3 md:gap-4">
+                            <Activity className="w-8 h-8 md:w-10 md:h-10 text-cyan-400" />
                             <div>
-                                <h3 className="text-slate-400 font-medium uppercase tracking-wider">Telemetría</h3>
-                                <p className="text-slate-500 text-sm">Actualizado vía OPC-UA</p>
+                                <h3 className="text-slate-400 font-medium text-xs md:text-sm uppercase tracking-wider">Telemetría</h3>
+                                <p className="text-slate-500 text-[10px] md:text-sm">Vía OPC-UA</p>
                             </div>
                         </div>
 
-                        <div className="flex gap-12">
+                        <div className="flex gap-6 md:gap-12">
                             <div className="text-right">
-                                <p className="text-slate-400 mb-1 uppercase text-sm font-bold">Tensión (bar)</p>
-                                <p className="text-4xl font-black font-mono text-white">{tension.toFixed(2)}</p>
+                                <p className="text-slate-400 mb-1 uppercase text-[10px] md:text-sm font-bold">Bar</p>
+                                <p className="text-2xl md:text-4xl font-black font-mono text-white">{tension.toFixed(2)}</p>
                             </div>
                             <div className="text-right">
-                                <p className="text-slate-400 mb-1 uppercase text-sm font-bold">Velocidad</p>
-                                <p className="text-4xl font-black font-mono text-white">{speed}</p>
+                                <p className="text-slate-400 mb-1 uppercase text-[10px] md:text-sm font-bold">m/min</p>
+                                <p className="text-2xl md:text-4xl font-black font-mono text-white">{speed}</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="w-full h-full relative rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center border border-slate-600 shadow-xl flex-1">
+                    <div className="w-full h-full relative rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center border border-slate-600 shadow-xl flex-1 min-h-[250px]">
                         <img
                             src={currentStep.image}
                             alt={stTitle}
@@ -213,7 +214,7 @@ export default function StepViewer() {
                             draggable="false"
                         />
                         {/* Overlay label */}
-                        <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur py-2 px-6 rounded-xl border border-slate-700 text-slate-300 text-xl font-medium">
+                        <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-slate-900/90 backdrop-blur py-1 px-3 md:py-2 md:px-6 rounded-lg md:rounded-xl border border-slate-700 text-slate-300 text-sm md:text-xl font-medium">
                             {t('visual_reference')}
                         </div>
                     </div>
@@ -221,13 +222,13 @@ export default function StepViewer() {
             </main>
 
             {/* Footer / Main Action */}
-            <footer className="p-8 shrink-0 bg-slate-900 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] z-10 border-t border-slate-800">
+            <footer className="p-4 md:p-8 shrink-0 bg-slate-900 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] z-10 border-t border-slate-800">
                 <button
                     onClick={handleNextStep}
-                    className="w-full h-28 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-white text-4xl font-extrabold rounded-2xl transition-all duration-200 flex items-center justify-center gap-8 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transform active:scale-[0.98]"
+                    className="w-full h-20 md:h-28 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-white text-2xl md:text-4xl font-extrabold rounded-xl md:rounded-2xl transition-all duration-200 flex items-center justify-center gap-4 md:gap-8 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transform active:scale-[0.98]"
                 >
                     {t('confirm_continue_btn')}
-                    <ArrowRight className="w-12 h-12" />
+                    <ArrowRight className="w-8 h-8 md:w-12 md:h-12" />
                 </button>
             </footer>
         </div>

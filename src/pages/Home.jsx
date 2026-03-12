@@ -58,53 +58,56 @@ export default function Home() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-900 text-white p-8 flex flex-col font-sans select-none">
+        <div className="min-h-screen bg-slate-900 text-white p-4 md:p-8 flex flex-col font-sans select-none overflow-x-hidden">
             <HistoryModal isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
 
             {/* Header */}
-            <header className="mb-12 flex justify-between items-center border-b border-slate-800 pb-6 shrink-0">
-                <div>
-                    <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('app_title')}</h1>
-                    <p className="text-2xl text-slate-400 mt-2">{t('app_subtitle')}</p>
+            <header className="mb-8 md:mb-12 flex flex-col lg:flex-row justify-between lg:items-center border-b border-slate-800 pb-6 shrink-0 gap-6">
+                <div className="text-center lg:text-left">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{t('app_title')}</h1>
+                    <p className="text-xl md:text-2xl text-slate-400 mt-2">{t('app_subtitle')}</p>
                 </div>
 
-                <div className="flex gap-4">
-                    <div className="flex items-center gap-3 bg-slate-800/80 px-6 py-4 rounded-2xl border border-slate-700 mr-4">
-                        <UserCircle className="w-8 h-8 text-cyan-400" />
+                <div className="flex flex-wrap justify-center lg:justify-end gap-3 md:gap-4">
+                    <div className="flex items-center gap-3 bg-slate-800/80 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border border-slate-700">
+                        <UserCircle className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
                         <div>
-                            <p className="text-slate-400 text-sm font-bold uppercase">Operador</p>
-                            <p className="text-white text-xl font-mono leading-none">{operatorId}</p>
+                            <p className="text-slate-400 text-xs md:text-sm font-bold uppercase">Operador</p>
+                            <p className="text-white text-lg md:text-xl font-mono leading-none">{operatorId}</p>
                         </div>
                     </div>
 
-                    <button
-                        onClick={toggleFullscreen}
-                        className="flex justify-center items-center w-16 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-2xl text-2xl font-bold transition-colors border border-slate-700 hover:border-slate-500"
-                        title={t('kiosk_mode_btn')}
-                    >
-                        {isFullscreen ? <Minimize className="w-8 h-8 text-amber-500" /> : <Maximize className="w-8 h-8 text-slate-300" />}
-                    </button>
-                    <button
-                        onClick={toggleLanguage}
-                        className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 px-6 py-4 rounded-2xl text-2xl font-bold transition-colors border border-slate-700 hover:border-emerald-500/50"
-                    >
-                        <Globe className="w-8 h-8 text-emerald-500" />
-                        {t(`language_${i18n.language}`)}
-                    </button>
-                    <button
-                        onClick={() => setIsHistoryOpen(true)}
-                        className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 px-8 py-6 rounded-2xl text-2xl font-bold transition-colors border border-slate-700 hover:border-slate-500"
-                    >
-                        <History className="w-8 h-8 text-slate-300" />
-                        {t('history_btn')}
-                    </button>
-                    <button
-                        onClick={handleLogout}
-                        className="flex justify-center items-center w-20 bg-red-500/10 hover:bg-red-500/20 active:bg-red-500/30 rounded-2xl transition-colors border border-red-500/30"
-                        title="Logout"
-                    >
-                        <LogOut className="w-8 h-8 text-red-500" />
-                    </button>
+                    <div className="flex gap-2">
+                        <button
+                            onClick={toggleFullscreen}
+                            className="flex justify-center items-center w-12 md:w-16 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-xl md:rounded-2xl border border-slate-700"
+                            title={t('kiosk_mode_btn')}
+                        >
+                            {isFullscreen ? <Minimize className="w-6 h-6 md:w-8 md:h-8 text-amber-500" /> : <Maximize className="w-6 h-6 md:w-8 md:h-8 text-slate-300" />}
+                        </button>
+                        <button
+                            onClick={toggleLanguage}
+                            className="flex items-center gap-2 md:gap-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl text-lg md:text-2xl font-bold transition-colors border border-slate-700"
+                        >
+                            <Globe className="w-6 h-6 md:w-8 md:h-8 text-emerald-500" />
+                            <span className="hidden sm:inline">{t(`language_${i18n.language}`)}</span>
+                            <span className="sm:hidden font-mono uppercase">{i18n.language}</span>
+                        </button>
+                        <button
+                            onClick={() => setIsHistoryOpen(true)}
+                            className="flex items-center gap-2 md:gap-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 px-4 md:px-8 py-3 md:py-6 rounded-xl md:rounded-2xl text-lg md:text-2xl font-bold transition-colors border border-slate-700"
+                        >
+                            <History className="w-6 h-6 md:w-8 md:h-8 text-slate-300" />
+                            <span className="hidden md:inline">{t('history_btn')}</span>
+                        </button>
+                        <button
+                            onClick={handleLogout}
+                            className="flex justify-center items-center w-12 md:w-20 bg-red-500/10 hover:bg-red-500/20 active:bg-red-500/30 rounded-xl md:rounded-2xl transition-colors border border-red-500/30"
+                            title="Logout"
+                        >
+                            <LogOut className="w-6 h-6 md:w-8 md:h-8 text-red-500" />
+                        </button>
+                    </div>
                 </div>
             </header>
 
@@ -119,18 +122,18 @@ export default function Home() {
                     </h2>
 
                     {/* Machine Status Card */}
-                    <div className="bg-slate-800 rounded-3xl border border-slate-700 p-8 shadow-xl relative overflow-hidden">
+                    <div className="bg-slate-800 rounded-3xl border border-slate-700 p-6 md:p-8 shadow-xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-[100px] pointer-events-none"></div>
-                        <h3 className="text-slate-400 font-medium text-xl uppercase tracking-wider mb-8">Estado de la Máquina</h3>
-                        <div className="flex items-center gap-6">
+                        <h3 className="text-slate-400 font-medium text-lg md:text-xl uppercase tracking-wider mb-6 md:mb-8">Estado de la Máquina</h3>
+                        <div className="flex items-center gap-4 md:gap-6">
                             <div className="relative">
-                                <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center animate-pulse">
-                                    <div className="w-12 h-12 bg-emerald-500 rounded-full shadow-[0_0_20px_#10b981]"></div>
+                                <div className="w-16 h-16 md:w-20 md:h-20 bg-emerald-500/20 rounded-full flex items-center justify-center animate-pulse">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-500 rounded-full shadow-[0_0_20px_#10b981]"></div>
                                 </div>
                             </div>
                             <div>
-                                <p className="text-5xl font-black text-white">{machineState}</p>
-                                <p className="text-emerald-400 text-xl font-medium mt-1">Conectado vía OPC-UA</p>
+                                <p className="text-4xl md:text-5xl font-black text-white">{machineState}</p>
+                                <p className="text-emerald-400 text-lg md:text-xl font-medium mt-1">Conectado vía OPC-UA</p>
                             </div>
                         </div>
                     </div>
@@ -181,10 +184,10 @@ export default function Home() {
                                 className="bg-slate-800 border border-slate-700 rounded-3xl p-8 flex flex-col hover:border-emerald-500/50 transition-all shadow-xl group"
                             >
                                 <div className="flex-1 mb-10">
-                                    <h3 className="text-4xl font-bold text-slate-100 mb-4 leading-tight group-hover:text-emerald-400 transition-colors">
+                                    <h3 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4 leading-tight group-hover:text-emerald-400 transition-colors">
                                         {product.product[i18n.language] || product.product['pt']}
                                     </h3>
-                                    <p className="text-2xl text-slate-400 leading-relaxed">
+                                    <p className="text-xl md:text-2xl text-slate-400 leading-relaxed">
                                         {product.description[i18n.language] || product.description['pt']}
                                     </p>
                                     <div className="mt-8 inline-block bg-slate-900 px-4 py-2 rounded-xl text-slate-300 text-lg font-medium border border-slate-700">
@@ -194,7 +197,7 @@ export default function Home() {
 
                                 <button
                                     onClick={() => handleStartSetup(product.id)}
-                                    className="w-full h-24 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-3xl font-bold rounded-2xl transition-colors duration-200 flex items-center justify-center gap-4 shadow-[0_0_15px_rgba(16,185,129,0.2)] active:scale-[0.98]"
+                                    className="w-full h-20 md:h-24 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-2xl md:text-3xl font-bold rounded-2xl transition-colors duration-200 flex items-center justify-center gap-4 shadow-[0_0_15px_rgba(16,185,129,0.2)] active:scale-[0.98]"
                                 >
                                     <PlayCircle className="w-10 h-10" />
                                     {t('start_setup_btn')}

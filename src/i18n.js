@@ -41,7 +41,19 @@ const resources = {
             status_completed: "CONCLUÍDO",
             status_cancelled: "CANCELADO",
             close_btn: "Fechar",
-            kiosk_mode_btn: "Modo Quiosque"
+            kiosk_mode_btn: "Modo Quiosque",
+            machine_status_title: "Estado da Máquina",
+            machine_connected: "Ligado via OPC-UA",
+            plant_label: "Planta Digital",
+            sensor_speed: "Velocidade",
+            sensor_temp: "Temp. Cilindros",
+            sensor_oee_label: "OEE em Tempo Real",
+            sensor_oee_sublabel: "Eficácia Global",
+            telemetry_label: "Telemetria",
+            telemetry_source: "Atualizado via OPC-UA",
+            telemetry_bar: "Bar",
+            telemetry_speed: "m/min",
+            operator_label: "Operador"
         }
     },
     es: {
@@ -83,7 +95,19 @@ const resources = {
             status_completed: "COMPLETADO",
             status_cancelled: "ANULADO",
             close_btn: "Cerrar",
-            kiosk_mode_btn: "Modo Quiosco"
+            kiosk_mode_btn: "Modo Quiosco",
+            machine_status_title: "Estado de la Máquina",
+            machine_connected: "Conectado vía OPC-UA",
+            plant_label: "Planta Digital",
+            sensor_speed: "Velocidad",
+            sensor_temp: "Temp. Rodillos",
+            sensor_oee_label: "OEE Real-Time",
+            sensor_oee_sublabel: "Efectividad Global",
+            telemetry_label: "Telemetría",
+            telemetry_source: "Actualizado vía OPC-UA",
+            telemetry_bar: "Bar",
+            telemetry_speed: "m/min",
+            operator_label: "Operador"
         }
     },
     en: {
@@ -125,7 +149,19 @@ const resources = {
             status_completed: "COMPLETED",
             status_cancelled: "CANCELLED",
             close_btn: "Close",
-            kiosk_mode_btn: "Kiosk Mode"
+            kiosk_mode_btn: "Kiosk Mode",
+            machine_status_title: "Machine Status",
+            machine_connected: "Connected via OPC-UA",
+            plant_label: "Digital Plant",
+            sensor_speed: "Speed",
+            sensor_temp: "Roll Temp.",
+            sensor_oee_label: "Real-Time OEE",
+            sensor_oee_sublabel: "Global Effectiveness",
+            telemetry_label: "Telemetry",
+            telemetry_source: "Updated via OPC-UA",
+            telemetry_bar: "Bar",
+            telemetry_speed: "m/min",
+            operator_label: "Operator"
         }
     }
 };

@@ -72,7 +72,7 @@ export default function Home() {
                     <div className="flex items-center gap-3 bg-slate-800/80 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border border-slate-700">
                         <UserCircle className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
                         <div>
-                            <p className="text-slate-400 text-xs md:text-sm font-bold uppercase">Operador</p>
+                            <p className="text-slate-400 text-xs md:text-sm font-bold uppercase">{t('operator_label')}</p>
                             <p className="text-white text-lg md:text-xl font-mono leading-none">{operatorId}</p>
                         </div>
                     </div>
@@ -118,13 +118,13 @@ export default function Home() {
                 <div className="xl:w-1/3 flex flex-col gap-6">
                     <h2 className="text-3xl font-bold flex items-center gap-4 text-emerald-400 mb-2">
                         <Activity className="w-10 h-10" />
-                        Planta Digital (GVT-01)
+                        {t('plant_label')} (GVT-01)
                     </h2>
 
                     {/* Machine Status Card */}
                     <div className="bg-slate-800 rounded-3xl border border-slate-700 p-6 md:p-8 shadow-xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-[100px] pointer-events-none"></div>
-                        <h3 className="text-slate-400 font-medium text-lg md:text-xl uppercase tracking-wider mb-6 md:mb-8">Estado de la Máquina</h3>
+                        <h3 className="text-slate-400 font-medium text-lg md:text-xl uppercase tracking-wider mb-6 md:mb-8">{t('machine_status_title')}</h3>
                         <div className="flex items-center gap-4 md:gap-6">
                             <div className="relative">
                                 <div className="w-16 h-16 md:w-20 md:h-20 bg-emerald-500/20 rounded-full flex items-center justify-center animate-pulse">
@@ -133,7 +133,7 @@ export default function Home() {
                             </div>
                             <div>
                                 <p className="text-4xl md:text-5xl font-black text-white">{machineState}</p>
-                                <p className="text-emerald-400 text-lg md:text-xl font-medium mt-1">Conectado vía OPC-UA</p>
+                                <p className="text-emerald-400 text-lg md:text-xl font-medium mt-1">{t('machine_connected')}</p>
                             </div>
                         </div>
                     </div>
@@ -143,14 +143,14 @@ export default function Home() {
                         <div className="bg-slate-800 rounded-3xl p-6 border border-slate-700 flex flex-col justify-center items-center text-center shadow-lg relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-cyan-500"></div>
                             <Gauge className="w-12 h-12 text-cyan-400 mb-4" />
-                            <p className="text-slate-400 text-lg uppercase tracking-wide font-medium">Velocidad</p>
-                            <p className="text-5xl font-black font-mono text-white mt-2">{speed}<span className="text-2xl text-slate-500 ml-1">m/min</span></p>
+                            <p className="text-slate-400 text-lg uppercase tracking-wide font-medium">{t('sensor_speed')}</p>
+                            <p className="text-5xl font-black font-mono text-white mt-2">{speed}<span className="text-2xl text-slate-500 ml-1">{t('telemetry_speed')}</span></p>
                         </div>
 
                         <div className="bg-slate-800 rounded-3xl p-6 border border-slate-700 flex flex-col justify-center items-center text-center shadow-lg relative overflow-hidden group hover:border-amber-500/50 transition-colors">
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-amber-500"></div>
                             <Thermometer className="w-12 h-12 text-amber-500 mb-4" />
-                            <p className="text-slate-400 text-lg uppercase tracking-wide font-medium">Temp. Rodillos</p>
+                            <p className="text-slate-400 text-lg uppercase tracking-wide font-medium">{t('sensor_temp')}</p>
                             <p className="text-5xl font-black font-mono text-white mt-2">{temperature}<span className="text-2xl text-slate-500 ml-1">°C</span></p>
                         </div>
 
@@ -160,8 +160,8 @@ export default function Home() {
                                 <div className="flex items-center gap-4">
                                     <Zap className="w-14 h-14 text-purple-400" />
                                     <div className="text-left">
-                                        <p className="text-slate-400 text-xl uppercase tracking-wide font-medium">OEE Real-Time</p>
-                                        <p className="text-slate-500 text-sm">Efectividad Global</p>
+                                        <p className="text-slate-400 text-xl uppercase tracking-wide font-medium">{t('sensor_oee_label')}</p>
+                                        <p className="text-slate-500 text-sm">{t('sensor_oee_sublabel')}</p>
                                     </div>
                                 </div>
                                 <p className="text-6xl font-black font-mono text-white">{oee}<span className="text-4xl text-slate-500 ml-1">%</span></p>

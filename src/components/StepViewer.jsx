@@ -189,18 +189,18 @@ export default function StepViewer() {
                         <div className="flex items-center gap-3 md:gap-4">
                             <Activity className="w-8 h-8 md:w-10 md:h-10 text-cyan-400" />
                             <div>
-                                <h3 className="text-slate-400 font-medium text-xs md:text-sm uppercase tracking-wider">Telemetría</h3>
-                                <p className="text-slate-500 text-[10px] md:text-sm">Vía OPC-UA</p>
+                                <h3 className="text-slate-400 font-medium text-xs md:text-sm uppercase tracking-wider">{t('telemetry_label')}</h3>
+                                <p className="text-slate-500 text-[10px] md:text-sm">{t('telemetry_source')}</p>
                             </div>
                         </div>
 
                         <div className="flex gap-6 md:gap-12">
                             <div className="text-right">
-                                <p className="text-slate-400 mb-1 uppercase text-[10px] md:text-sm font-bold">Bar</p>
+                                <p className="text-slate-400 mb-1 uppercase text-[10px] md:text-sm font-bold">{t('telemetry_bar')}</p>
                                 <p className="text-2xl md:text-4xl font-black font-mono text-white">{tension.toFixed(2)}</p>
                             </div>
                             <div className="text-right">
-                                <p className="text-slate-400 mb-1 uppercase text-[10px] md:text-sm font-bold">m/min</p>
+                                <p className="text-slate-400 mb-1 uppercase text-[10px] md:text-sm font-bold">{t('telemetry_speed')}</p>
                                 <p className="text-2xl md:text-4xl font-black font-mono text-white">{speed}</p>
                             </div>
                         </div>

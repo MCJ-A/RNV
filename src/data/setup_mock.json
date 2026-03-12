@@ -1,0 +1,173 @@
+[
+    {
+        "id": "roll-500m",
+        "product": {
+            "pt": "Rolo Higiénico Folha Dupla 500m",
+            "es": "Rollo Higiénico Doble Hoja 500m",
+            "en": "Double Ply Toilet Roll 500m"
+        },
+        "description": {
+            "pt": "Formato padrão folha dupla, mandril de 45mm.",
+            "es": "Formato estándar doble hoja, cono de 45mm.",
+            "en": "Standard double ply format, 45mm core."
+        },
+        "steps": [
+            {
+                "id": 1,
+                "title": {
+                    "pt": "Carregar Bobina",
+                    "es": "Cargar Bobina",
+                    "en": "Load Mother Roll"
+                },
+                "instruction": {
+                    "pt": "Coloque a bobina mãe no desbobinador. Certifique-se de que o sentido de rotação está correto (para cima). Centrar e insuflar os eixos.",
+                    "es": "Coloque la bobina madre en el desbobinador. Asegúrese de que el sentido de giro sea el correcto (hacia arriba). Centrar e inflar los ejes.",
+                    "en": "Place the mother roll on the unwind stand. Ensure the rotation direction is correct (upwards). Center and inflate the shafts."
+                },
+                "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800&h=600"
+            },
+            {
+                "id": 2,
+                "title": {
+                    "pt": "Ajuste de Tensão",
+                    "es": "Ajuste de Tensión",
+                    "en": "Tension Adjustment"
+                },
+                "instruction": {
+                    "pt": "Ajuste a tensão da folha para 2.5 bar no painel principal. Verifique se os rolos de pressão estão engatados corretamente.",
+                    "es": "Ajuste la tensión de la hoja a 2.5 bar en el panel principal. Verifique que los rodillos pisadores estén enganchados correctamente.",
+                    "en": "Adjust web tension to 2.5 bar on the main panel. Verify the nip rollers are engaged correctly."
+                },
+                "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800&h=600"
+            },
+            {
+                "id": 3,
+                "title": {
+                    "pt": "Configurar Lâminas",
+                    "es": "Configurar Cuchillas",
+                    "en": "Configure Blades"
+                },
+                "instruction": {
+                    "pt": "Ajuste o passo de corte para 110mm. Ative a lubrificação transversal das lâminas. Feche as guardas de proteção.",
+                    "es": "Ajuste el paso de corte a 110mm. Active la lubricación cruzada de las cuchillas. Cierre las guardas protectoras.",
+                    "en": "Adjust cut length to 110mm. Activate cross lubrication of the blades. Close safety guards."
+                },
+                "image": "https://images.unsplash.com/photo-1590496735165-8b82404c0ec0?auto=format&fit=crop&q=80&w=800&h=600"
+            },
+            {
+                "id": 4,
+                "title": {
+                    "pt": "Carga de Mandris",
+                    "es": "Carga de Mandriles",
+                    "en": "Core Loading"
+                },
+                "instruction": {
+                    "pt": "Encha a tremonha com mandris de cartão de 45mm de diâmetro interior. Ative o alimentador automático.",
+                    "es": "Llene la tolva con los mandriles de cartón de 45mm de diámetro interior. Active el alimentador automático.",
+                    "en": "Fill the hopper with 45mm inner diameter cardboard cores. Activate the automatic feeder."
+                },
+                "image": "https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&q=80&w=800&h=600"
+            }
+        ]
+    },
+    {
+        "id": "roll-inst-1000m",
+        "product": {
+            "pt": "Rolo Institucional Folha Simples 1000m",
+            "es": "Rollo Institucional Simple Hoja 1000m",
+            "en": "Institutional Single Ply Roll 1000m"
+        },
+        "description": {
+            "pt": "Formato industrial folha simples, alta metragem, mandril de 76mm.",
+            "es": "Formato industrial simple hoja, alto metraje, cono de 76mm.",
+            "en": "Industrial single ply format, high length, 76mm core."
+        },
+        "steps": [
+            {
+                "id": 1,
+                "title": {
+                    "pt": "Carregar Bobina Gigante",
+                    "es": "Cargar Bobina Gigante",
+                    "en": "Load Giant Mother Roll"
+                },
+                "instruction": {
+                    "pt": "Use grua para carregar a bobina mãe Jumbo. Precaução: Peso superior a 1 tonelada. Prenda fixações pesadas.",
+                    "es": "Use grúa para cargar la bobina madre Jumbo. Precaución: Peso superior a 1 tonelada. Asegure anclajes pesados.",
+                    "en": "Use crane to load Jumbo mother roll. Caution: Weight over 1 ton. Secure heavy anchors."
+                },
+                "image": "https://images.unsplash.com/photo-1565439395258-293d07bfb30d?auto=format&fit=crop&q=80&w=800&h=600"
+            },
+            {
+                "id": 2,
+                "title": {
+                    "pt": "Ajuste de Tensão Alta",
+                    "es": "Ajuste de Tensión Alta",
+                    "en": "High Tension Adjustment"
+                },
+                "instruction": {
+                    "pt": "Para esta gramagem simples, ajuste a tensão principal para 3.8 bar. Desligue os módulos de gofragem/embossing.",
+                    "es": "Para este gramaje simple, ajuste la tensión principal a 3.8 bar. Apague los módulos de gofrado/embossing.",
+                    "en": "For this single ply, adjust main tension to 3.8 bar. Turn off embossing modules."
+                },
+                "image": "https://images.unsplash.com/photo-1621644781442-171b3152a55d?auto=format&fit=crop&q=80&w=800&h=600"
+            },
+            {
+                "id": 3,
+                "title": {
+                    "pt": "Mudança Mandril 76mm",
+                    "es": "Cambio Mandril 76mm",
+                    "en": "76mm Core Change"
+                },
+                "instruction": {
+                    "pt": "Mude o mandril rotativo para a medida de 76mm (3 polegadas). Encha a tremonha de cones largos.",
+                    "es": "Cambie el mandril rotatorio a la medida de 76mm (3 pulgadas). Llene la tolva de conos anchos.",
+                    "en": "Change the rotary core shaft to 76mm (3 inches). Fill hopper with wide cores."
+                },
+                "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800&h=600"
+            }
+        ]
+    },
+    {
+        "id": "kitchen-towel",
+        "product": {
+            "pt": "Rolo de Cozinha Mega Absorb",
+            "es": "Toalla de Cocina Mega Absorb",
+            "en": "Kitchen Towel Mega Absorb"
+        },
+        "description": {
+            "pt": "Papel de cozinha de alto relevo e pré-corte espaçado.",
+            "es": "Papel toalla de alto gofrado y precorte espaciado.",
+            "en": "Kitchen towel with high embosssing and spaced perforation."
+        },
+        "steps": [
+            {
+                "id": 1,
+                "title": {
+                    "pt": "Ativar Módulo Gofrador",
+                    "es": "Activar Módulo Gofrador",
+                    "en": "Activate Embossing Module"
+                },
+                "instruction": {
+                    "pt": "Ligue o rolo de gofragem (Embosser) e aplique pressão a 4.0 bar. Verifique o padrão visual.",
+                    "es": "Encienda el rodillo de gofrado (Embosser) y aplique presión a 4.0 bar. Verifique el patrón visual.",
+                    "en": "Turn on the embossing roller and apply pressure to 4.0 bar. Verify the visual pattern."
+                },
+                "image": "https://images.unsplash.com/photo-1565439395258-293d07bfb30d?auto=format&fit=crop&q=80&w=800&h=600"
+            },
+            {
+                "id": 2,
+                "title": {
+                    "pt": "Configurar Pré-corte",
+                    "es": "Configurar Precorte",
+                    "en": "Configure Perforation"
+                },
+                "instruction": {
+                    "pt": "Ajuste a distância do rolo perfurador para 220mm. Mude a lâmina se tiver mais de 3 dias de uso.",
+                    "es": "Ajuste la distancia del rodillo perforador a 220mm. Cambie cuchilla si lleva más de 3 días de uso.",
+                    "en": "Adjust perforator roller distance to 220mm. Change blade if it has been used for more than 3 days."
+                },
+                "image": "https://images.unsplash.com/photo-1563725547608-ca32578e8748?auto=format&fit=crop&q=80&w=800&h=600"
+            }
+        ]
+    }
+]

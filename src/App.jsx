@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import StepViewer from './components/StepViewer';
 import Login from './pages/Login';
+import StepBuilder from './pages/StepBuilder';
 import { useAuthStore } from './store/useAuthStore';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
@@ -67,6 +68,17 @@ function App() {
 
       <Routes>
         <Route path="/login" element={<Login />} />
+        {/* Admin/Engineer Routes */}
+        <Route
+          path="/admin/builder"
+          element={
+            <ProtectedRoute>
+              <StepBuilder />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Dashboard and the Setup */}
         <Route
           path="/dashboard"
           element={

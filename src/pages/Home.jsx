@@ -8,7 +8,7 @@ import HistoryModal from '../components/HistoryModal';
 import { useAuthStore } from '../store/useAuthStore';
 
 export default function Home() {
-    const { availableProducts, selectProduct } = useSetupStore();
+    const { availableProducts, selectProduct, fetchProducts, loading, error } = useSetupStore();
     const { machineState, speed, tension, oee, temperature, startSimulation, setMachineState } = useIIoTSimulator();
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
@@ -16,11 +16,12 @@ export default function Home() {
     const [isFullscreen, setIsFullscreen] = React.useState(false);
     const { operatorId, logout } = useAuthStore();
 
-    // Start simulation on load and ensure it's in PRODUCTION state before setup starts
+    // Start simulation and fetch products on load
     useEffect(() => {
         setMachineState('PRODUCTION');
         startSimulation();
-    }, [startSimulation, setMachineState]);
+        fetchProducts();
+    }, [startSimulation, setMachineState, fetchProducts]);
 
     const handleStartSetup = (productId) => {
         selectProduct(productId);
@@ -185,10 +186,10 @@ export default function Home() {
                             >
                                 <div className="flex-1 mb-10">
                                     <h3 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4 leading-tight group-hover:text-emerald-400 transition-colors">
-                                        {product.product[i18n.language] || product.product['pt']}
+                                        {product.name || 'Sem Nome'}
                                     </h3>
                                     <p className="text-xl md:text-2xl text-slate-400 leading-relaxed">
-                                        {product.description[i18n.language] || product.description['pt']}
+                                        {product.description || 'Descrição não disponível'}
                                     </p>
                                     <div className="mt-8 inline-block bg-slate-900 px-4 py-2 rounded-xl text-slate-300 text-lg font-medium border border-slate-700">
                                         {t('setup_steps_count', { count: product.steps.length })}

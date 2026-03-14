@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id    String @id @default(uuid())
+  nome  String
+  papel String @default("OPERATOR") // "ENGINEER" ou "OPERATOR"
+}
+
+model Fabrico {
+  id        String   @id @default(uuid())
+  nome      String   
+  data      DateTime @default(now())
+  secoes    Secao[]
+}
+
+model Secao {
+  id             String   @id @default(uuid())
+  nome           String   
+  tempoPrevisto  Int      
+  fabricoId      String
+  fabrico        Fabrico  @relation(fields: [fabricoId], references: [id], onDelete: Cascade)
+  passos         Passo[]
+}
+
+model Passo {
+  id               String   @id @default(uuid())
+  ordem            Int      
+  descricao        String
+  
+  // No Prisma com SQLite não podemos usar Arrays reais de Strings (String[]).
+  // Iremos guardar como JSON stringified para manter compatibilidade simples.
+  ferramentasStr   String   @default("[]") 
+  episRequeridosStr String  @default("[]") 
+  
+  concluido        Boolean  @default(false)
+  epiConfirmado    Boolean  @default(false) 
+  tempoExecucao    Int?     
+  tempoInicio      DateTime?
+  secaoId          String
+  secao            Secao    @relation(fields: [secaoId], references: [id], onDelete: Cascade)
+}
